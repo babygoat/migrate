@@ -90,7 +90,7 @@ func WithInstance(instance *sql.DB, config *Config) (database.Driver, error) {
 }
 
 func (m *Mysql) Open(url string) (database.Driver, error) {
-	url = strings.TrimPrefix(url, "mysql://")
+	url = strings.TrimPrefix(url, "mysql:")
 	purl, err := nurl.Parse(url)
 	if err != nil {
 		return nil, err
